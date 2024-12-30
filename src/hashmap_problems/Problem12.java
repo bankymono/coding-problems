@@ -15,7 +15,7 @@ public class Problem12 {
         Map<Character,Character> charST = new HashMap<>();
         Map<Character,Character> charTS = new HashMap<>();
 
-        if(charST.size() != charTS.size()){
+        if(s.length() != t.length()){
             return false;
         }
 
@@ -24,7 +24,7 @@ public class Problem12 {
             char tChar = t.charAt(i);
 
             if(charST.containsKey(sChar)){
-                if(charTS.get(tChar) != sChar){
+                if(charST.get(tChar) != sChar){
                     return false;
                 }
             } else {
@@ -32,7 +32,7 @@ public class Problem12 {
             }
 
             if(charTS.containsKey(tChar)){
-                if(charST.get(sChar) != tChar){
+                if(charTS.get(sChar) != tChar){
                     return false;
                 }
             } else {
