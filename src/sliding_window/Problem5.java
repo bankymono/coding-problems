@@ -11,7 +11,7 @@ public class Problem5 {
     }
 
     public static int subarraysWithKDistinct(int[] nums, int k) {
-        return subarrayWithMostK(nums, k);
+        return subarrayWithMostK(nums, k) - subarrayWithMostK(nums, k - 1);
     }
 
     public static int subarrayWithMostK(int[] nums, int k) {
@@ -24,14 +24,12 @@ public class Problem5 {
             charMap.put(nums[right], charMap.getOrDefault(nums[right],0)+1);
 
             while(charMap.size() > k){
+                charMap.put(nums[left], charMap.get(nums[left]) - 1);
                 if(charMap.get(nums[left]) == 0) {
                     charMap.remove(nums[left]);
-                } else {
-                    charMap.put(nums[left], charMap.get(nums[left]) - 1);
                 }
                 left++;
             }
-
 
             count += right - left + 1;
         }
