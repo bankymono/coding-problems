@@ -8,7 +8,7 @@ public class Problem21 {
         String input1 = "listen";
         String input2 = "silent";
 
-        System.out.println(areValidAnagrams(input1, input2));
+        System.out.println(areValidAnagrams(input1, input1));
     }
 
     public static boolean areValidAnagrams(String input1, String input2) {
