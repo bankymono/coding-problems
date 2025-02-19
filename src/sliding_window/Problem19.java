@@ -5,35 +5,37 @@ public class Problem19 {
         int[] nums = {1,1,2,1,1};
         int k = 3;
 
-        System.out.println("#" +niceSubArrays(nums, k));
-        
+        int mostK = niceSubArrays(nums, k);
+        int mostKMinOne = niceSubArrays(nums, k - 1);
+
+        int kNice = mostK - mostKMinOne;
+
+        System.out.println("#" +kNice);
     }
 
     public static int niceSubArrays(int[] nums, int k) {
         int subArrCount = 0;
-        int nice = 0;
+        int oddCount = 0;
         int left = 0;
 
         for(int right = 0; right < nums.length; right++) {
             int currentNum = nums[right];
 
-//            System.out.println(currentNum % 2);
 
             if(currentNum % 2 != 0){
-                nice++;
+                oddCount++;
             }
 
-            while(nice > k) {
+            while(oddCount > k) {
                 int leftNum = nums[left];
                 if(leftNum % 2 != 0){
-                    nice--;
+                    oddCount--;
                 }
                 left++;
             }
 
-            if(nice == k) {
-                subArrCount++;
-            }
+            subArrCount += right - left + 1;
+
         }
 
         return subArrCount;
