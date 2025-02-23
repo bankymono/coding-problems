@@ -19,10 +19,6 @@ public class GridTraveller {
         if(m == 1) return 1;
         if(n == 1) return 1;
 
-        
-
-
-
 
         long result = gridTraveller(m, n - 1) + gridTraveller(m - 1, n);
         memo.put(key, result);
