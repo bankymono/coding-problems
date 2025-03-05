@@ -56,6 +56,6 @@ public class Problem2 {
             }
         }
 
-        return minLength == Integer.MAX_VALUE ? "" : s.substring(minStart, right);
+        return minStart == Integer.MAX_VALUE ? "" : s.substring(minStart, right);
     }
 }
