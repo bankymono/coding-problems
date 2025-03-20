@@ -16,7 +16,7 @@ public class Problem39 {
         for(int right = 0; right < nums.length; right++){
             sum += nums[right];
 
-            while(sum > k) {
+            while(sum >= k) {
                 smallestLength =Math.min(right - left + 1, smallestLength);
 
                 sum -= nums[left];
