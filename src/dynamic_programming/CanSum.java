@@ -8,13 +8,13 @@ public class CanSum {
     private static final Map<Integer, Boolean> memo = new HashMap<>();
 
     public static void main(String[] args) {
-        System.out.println(canSum(7, new int[]{5, 3, 4, 7}));
+        System.out.println(canSum(300, new int[]{5, 3, 8, 8}));
     }
 
     public static boolean canSum(int targetSum, int[] nums) {
-//        if(memo.containsKey(targetSum)){
-//            return memo.get(targetSum);
-//        }
+        if(memo.containsKey(targetSum)){
+            return memo.get(targetSum);
+        }
 
         if(targetSum == 0) {
             return true;
@@ -30,7 +30,7 @@ public class CanSum {
             }
         }
 
-//        return  memo.get(targetSum);
+        memo.put(targetSum, false);
         return false;
     }
 }
