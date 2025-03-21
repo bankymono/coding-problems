@@ -6,7 +6,7 @@ public class HowSum {
     public static Map<Integer,List<Integer>> memo = new HashMap<>();
     public static void main(String[] args) {
 
-        System.out.println(howSum(11459, new int[]{6, 4, 8}));
+        System.out.println(howSum(8, new int[]{6, 4, 4,8}));
     }
 
     public static List<Integer> howSum(int targetSum, int[] nums) {
