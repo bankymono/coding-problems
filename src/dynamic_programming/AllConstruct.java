@@ -10,7 +10,7 @@ public class AllConstruct {
         System.out.println(allConstruct("abcdef", new String[]{"ab", "abc", "cd", "def", "abcd","ef", "c"}, memo));
         System.out.println(allConstruct("skateboard", new String[]{"bo", "rd", "ate", "t", "ska", "boar"}, memo));
         System.out.println(allConstruct("enterapotentpot", new String[]{"a", "p", "ent", "enter", "ot", "o", "t"}, memo));
-        System.out.println(allConstruct("eeeeeeeef",
+        System.out.println(allConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeef",
                 new String[]{"e",
                         "ee",
                         "eee",
@@ -37,12 +37,19 @@ public class AllConstruct {
 
                 if (!prevResult.isEmpty()) {
                     List<List<String>> tempHolder = new ArrayList<>();
-                    for(List<String> innerList : prevResult) {
-                        List<String> list = new ArrayList<>();
-                        list.add(word);
-                        list.addAll(innerList);
-                        tempHolder.add(list);
-                    }
+                    tempHolder = prevResult.stream().map( eachItem -> {
+                        List<String> newList = new ArrayList<>();
+                        newList.add(word);
+                        newList.addAll(eachItem);
+                        return newList;
+                    }).toList();
+
+//                    for(List<String> innerList : prevResult) {
+//                        List<String> list = new ArrayList<>();
+//                        list.add(word);
+//                        list.addAll(innerList);
+//                        tempHolder.add(list);
+//                    }
                     result.addAll(tempHolder);
                 }
             }
