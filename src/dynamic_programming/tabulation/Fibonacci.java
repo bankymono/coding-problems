@@ -14,7 +14,6 @@ public class Fibonacci {
     public static long fib(int n) {
         long[] table = new long[n + 1];
         table[1] = 1;
-
         for(int i = 0; i < n; i++){
             table[i + 1] += table[i];
             if(i + 2 <= n){
