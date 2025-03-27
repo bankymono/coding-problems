@@ -40,9 +40,11 @@ public class Problem46 {
 
                 char leftChar = s.charAt(left);
                 windowMap.put(leftChar, windowMap.get(leftChar) - 1);
+
                 if(tMap.containsKey(leftChar) && windowMap.get(leftChar) < tMap.get(leftChar)){
                     formed--;
                 }
+
                 left++;
             }
         }
