@@ -3,8 +3,8 @@ package dynamic_programming;
 public class CountingChange {
     public static void main(String[] args) {
         System.out.println(countingChange(4, new int[]{1, 2, 3}));
-        System.out.println(countingChange(5, new int[]{1, 2, 3, 4}));
-        System.out.println(countingChange(15, new int[]{7, 7, 7}));
+//        System.out.println(countingChange(5, new int[]{1, 2, 3, 4}));
+//        System.out.println(countingChange(15, new int[]{7, 7, 7}));
     }
 
     public static int countingChange(int target, int[] coins) {
