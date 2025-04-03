@@ -15,7 +15,7 @@ public class CountingChange2 {
 
     public static int countingChange2(int amount, int coinIdx, List<Integer> coins, Map<String, Integer> memo) {
         StringBuilder builder = new StringBuilder();
-        builder.append(coinIdx).append(",").append(amount);
+        builder.append(amount).append(",").append(coinIdx);
         if(memo.containsKey(builder.toString())) return memo.get(builder.toString());
         if(amount == 0) {
             return 1;
