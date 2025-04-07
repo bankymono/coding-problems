@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Lc198 {
     public static void main(String[] args) {
-        System.out.println(houseRobber(new int[]{1,2,3,1}));
+        System.out.println(houseRobber(new int[]{1}));
     }
 
     public static int houseRobber(int[] nums) {
