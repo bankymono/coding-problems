@@ -32,3 +32,4 @@ public class Problem48 {
         return countSum;
     }
 }
+
