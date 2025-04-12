@@ -15,7 +15,7 @@ public class NonAdjacentSumArrays {
     }
 
     public static List<List<Integer>> nonAdjacentArrays(List<Integer> nums, int i, Map<Integer, List<List<Integer>>> memo) {
-//        if(memo.containsKey(i)) return memo.get(i);
+        if(memo.containsKey(i)) return memo.get(i);
         if(i >= nums.size()){
             List<List<Integer>> res = new ArrayList<>();
             res.add(new ArrayList<>());
@@ -38,7 +38,7 @@ public class NonAdjacentSumArrays {
 
 //        nums.get(i) + nonAdjacentArrays(nums, i+2, memo), nonAdjacentArrays(nums, i+1, memo));
 
-//        memo.put(i, result);
+        memo.put(i, result);
         return result;
     }
 
