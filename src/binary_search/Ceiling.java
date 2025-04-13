@@ -3,7 +3,7 @@ package binary_search;
 public class Ceiling {
     public static void main(String[] args) {
         int[] arr = {-18, -12, -4, 0,2, 3,4,15, 16, 18, 22, 45, 89};
-        int target = 13;
+        int target = 89;
         int ans = ceiling(arr, target);
 
         System.out.println(arr[ans]);

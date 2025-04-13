@@ -18,6 +18,7 @@ public class NonAdjacentSumArrays {
         if(memo.containsKey(i)) return memo.get(i);
         if(i >= nums.size()){
             List<List<Integer>> res = new ArrayList<>();
+
             res.add(new ArrayList<>());
             return res;
         }
