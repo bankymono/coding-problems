@@ -24,7 +24,6 @@ public class Problem11 {
                 longestStreak = Math.max(currentStreak, longestStreak);
 
 
-
                 numMap.put(nums[i] - left, currentStreak);
                 numMap.put(nums[i], currentStreak);
                 numMap.put(nums[i] + right, currentStreak);
