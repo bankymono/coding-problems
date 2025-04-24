@@ -24,9 +24,9 @@ public class BestSum {
                             dp[i + num].add(num);
                         } else {
                             var arr = new ArrayList<>(dp[i]);
+                            arr.add(num);
                             if(arr.size() <dp[i + num].size()) {
                                 dp[i + num] = arr;
-                                dp[i + num].add(num);
                             }
                         }
                     }
