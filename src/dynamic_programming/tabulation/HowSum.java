@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class HowSum {
     public static void main(String[] args) {
-        System.out.println((howSum(8, new int[]{6, 4, 4,8})));
+        System.out.println((howSum(8, new int[]{6, 4, 4})));
     }
 
     public static List<Integer> howSum(int targetSum, int[] nums) {
