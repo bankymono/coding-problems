@@ -15,7 +15,7 @@ public class RotatedBinarySearch {
         if(arr[pivot] == value) {
             return pivot;
         }
-        if(value > arr[0]) {
+        if(value >= arr[0]) {
             return binarySearch(arr, value, 0, pivot - 1);
         } else {
             return binarySearch(arr, value, pivot + 1, arr.length -1 );
