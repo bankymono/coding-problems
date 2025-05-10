@@ -29,6 +29,7 @@ public class Permutations {
             if(tempList.contains(num)){
                 continue;
             }
+
             tempList.add(num);
             backtracking(result, tempList, nums);
             tempList.remove(tempList.size() - 1);
