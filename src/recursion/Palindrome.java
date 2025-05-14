@@ -1,9 +1,8 @@
 package recursion;
 
-public class ReverseNumber {
+public class Palindrome {
     public static void main(String[] args) {
-        System.out.println(reverse(1234));
-//        System.out.println(reverse2(1234));
+        System.out.println(palindrome(1234321));
     }
 
     static int sum = 0;
@@ -14,7 +13,6 @@ public class ReverseNumber {
 
     public static int rev2(int num) {
         int digits = (int) Math.log10(num) + 1;
-
         return helper(num, digits);
     }
 
@@ -23,6 +21,10 @@ public class ReverseNumber {
             return  num;
         }
         return (num % 10) * ((int) Math.pow(10, digits-1)) + helper(num/10, digits - 1);
+    }
+
+    public static boolean palindrome(int n) {
+        return n == rev2(n);
     }
 
 //    public static void rev1 (int n) {
@@ -37,12 +39,12 @@ public class ReverseNumber {
 //    }
 
 
-    public static String reverse2(int n){
-        if(n % 10  == n) {
-            return "" + n;
-        }
-
-        return n%10 + reverse2(n/10);
-    }
+//    public static String reverse(int n){
+//        if(n % 10 == n) {
+//            return "" + n;
+//        }
+//
+//        return n%10 + reverse(n/10);
+//    }
 
 }
