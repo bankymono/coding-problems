@@ -19,7 +19,7 @@ public class Subset {
 
     public static void backtrack(List<List<Integer>> resultSet, List<Integer> tempSet, int[] nums, int start) {
         resultSet.add(new ArrayList<>(tempSet));
-        System.out.println(resultSet);
+
         for(int i = start; i < nums.length; i++) {
             tempSet.add(nums[i]);
             backtrack(resultSet, tempSet, nums, i + 1);

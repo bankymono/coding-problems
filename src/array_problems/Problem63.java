@@ -52,6 +52,6 @@ public class Problem63 {
             }
         }
         
-        return s.substring(startIndex, startIndex + minSize);
+        return minSize == Integer.MAX_VALUE ? "" : s.substring(startIndex, startIndex + minSize);
     }
 }
