@@ -16,7 +16,6 @@ public class Subset2 {
 
         Arrays.sort(nums);
 
-
         backtrack(resultList, new ArrayList<>(), nums, 0);
 
         return resultList;
