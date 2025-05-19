@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Problem12 {
     public static void main(String[] args) {
-        int[] nums = {1, 1, 1};
+        int[] nums = {1, -1, 1, 1};
         int k = 2;
 
         System.out.println(sumToK(nums, k));
