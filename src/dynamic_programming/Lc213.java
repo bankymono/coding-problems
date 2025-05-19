@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Lc213 {
     public static void main(String[] args) {
-        System.out.println(rob(new int[]{1}));
+        System.out.println(rob(new int[]{1,2,3}));
     }
 
     public static int rob(int[] nums) {

@@ -13,7 +13,7 @@ public class Lc198 {
     public static int houseRobber(int[] nums) {
         return houseRobber(0, nums, new HashMap<>());
     }
-
+    
     public static int houseRobber(int index, int[] nums, Map<Integer, Integer> memo) {
         if(memo.containsKey(index)) return memo.get(index);
         if(index >= nums.length) {
