@@ -5,8 +5,10 @@ import java.util.List;
 
 public class LetterCombination {
     public static void main(String[] args) {
-        System.out.println(('b' - 1));
-        System.out.println(letterCombination("","12"));
+//        System.out.println(('b' - 1));
+//        System.out.println(letterCombination("","12"));
+//        pad("","23");
+        System.out.println(letterCombination("","23"));
     }
 
     public static void pad(String p, String up) {
@@ -17,7 +19,11 @@ public class LetterCombination {
 
         int digit = up.charAt(0) - '0';
 
-        System.out.println();
+        for(int i = (digit - 2) * 3; i < ((digit - 1) * 3); i++) {
+            char ch = (char) ('a' + i);
+            pad(p + ch, up.substring(1));
+        }
+
     }
 
     public static List<String> letterCombination(String p, String up) {
@@ -27,15 +33,15 @@ public class LetterCombination {
             return ans;
         }
 
-        char ch = up.charAt(0);
-        List<String> finalResult = new ArrayList<>();
-        for(int i = 0; i <= p.length(); i++) {
-            String f = p.substring(0, i);
-            String s = p.substring(i);
-            var res = letterCombination(f + ch + s, up.substring(1));
-            finalResult.addAll(res);
+        int digit = up.charAt(0) - '0';
+        List<String> result = new ArrayList<>();
+
+        for(int i = (digit - 2) * 3; i < ((digit - 1) * 3); i++) {
+            char ch = (char) ('a' + i);
+            var ans = letterCombination(p + ch, up.substring(1));
+           result.addAll(ans);
         }
 
-        return finalResult;
+        return result;
     }
 }
