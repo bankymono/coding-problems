@@ -8,7 +8,14 @@ public class Maze {
 //        System.out.println(count(4, 3));
 //        printPath("",4,3);
 //        System.out.println(listPath("", 3, 3));
-        System.out.println(listPathDiagonal("", 3, 3));
+//        System.out.println(listPathDiagonal("", 3, 3));
+        boolean[][] board = {
+                {true, true, true},
+                {true, false, true},
+                {true, true, true}
+        };
+        printPathRestrictions("", board, 0,0);
+
     }
 
     public static int count(int r, int c) {
@@ -94,5 +101,47 @@ public class Maze {
 
 
         return result;
+    }
+
+    public static List<String> listPathRestrictions(String p, boolean[][] maze, int r, int c) {
+        if(r == maze.length - 1 && c == maze[0].length - 1) {
+            List<String> ans = new ArrayList<>();
+            ans.add(p);
+            return ans;
+        }
+
+        if(!maze[r][c]) {
+            return new ArrayList<>();
+        }
+
+        List<String> result = new ArrayList<>();
+        if(r < maze.length - 1) {
+            result.addAll(listPathRestrictions(p + "D", maze,r -1, c));
+        }
+
+        if(c < maze[0].length - 1) {
+            result.addAll(listPathRestrictions(p + "R", maze, r, c-1));
+        }
+
+        return result;
+    }
+
+    public static void printPathRestrictions(String p, boolean[][] maze, int r, int c) {
+        if(r == maze.length - 1 && c == maze[0].length - 1) {
+            System.out.println(p);
+            return;
+        }
+
+        if(!maze[r][c]) {
+            return;
+        }
+
+        if(r < maze.length - 1) {
+            printPathRestrictions(p + "D", maze, r + 1, c);
+        }
+
+        if(c < maze[0].length - 1) {
+            printPathRestrictions(p + "R", maze, r, c + 1);
+        }
     }
 }
