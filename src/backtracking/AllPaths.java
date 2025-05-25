@@ -21,6 +21,8 @@ public class AllPaths {
             return;
         }
 
+        maze[r][c] = false;
+
         if(r < maze.length - 1) {
             allPath(p + "D", maze, r + 1, c);
         }
@@ -36,5 +38,7 @@ public class AllPaths {
         if(c > 0) {
             allPath(p + "L", maze, r, c - 1);
         }
+
+        maze[r][c] = true;
     }
 }

@@ -26,6 +26,8 @@ public class Lc300 {
 
         int take = 0;
         if(prevIndex == -1 || nums[currentIndex] > nums[prevIndex]) {
+//            [12, 1, 4, 13] 1/0, 2/0, 3/0
+
             take = 1 + lengthOfLIS(nums, currentIndex + 1, currentIndex, memo);
         }
 
