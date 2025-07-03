@@ -13,6 +13,8 @@ public class Lc647b {
         int count = 0;
         Map<String, Boolean> memo = new HashMap<>();
 
+
+
         for(int i = 0; i < n; i++) {
             for(int j = i; j < n; j++) {
                 if(isPalindrome(s, i, j, memo)) {
