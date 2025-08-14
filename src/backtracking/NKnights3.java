@@ -1,5 +1,7 @@
 package backtracking;
 
+import java.util.List;
+
 public class NKnights3 {
     public static void main(String[] args) {
         int n = 4;
@@ -16,6 +18,11 @@ public class NKnights3 {
         if(row == board.length-1 && col == board[0].length) {
             return;
         }
+
+        List<Integer> list = List.of(1,2,3,4,5);
+        int sum = list.stream().map(val -> val * val)
+                .reduce(0, (val, acc) -> val + acc);
+        System.out.println("sum -> " + sum);
 
         if(col == board[0].length) {
             knight(board, row + 1, 0, knights);
