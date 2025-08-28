@@ -8,5 +8,10 @@ public class Main {
         list.insertFirst(4);
         list.insertFirst(5);
         list.display();
+
+        list.insertV2(1900, 2);
+        list.display();
+        list.deleteFirst();
+        list.display();
     }
 }
