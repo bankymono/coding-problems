@@ -104,7 +104,7 @@ public class LinkedList {
         return val;
     }
 
-    public int deleteLast() {}
+//    public int deleteLast() {}
     int val = tail.val;
 
 
