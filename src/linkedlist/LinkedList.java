@@ -92,6 +92,46 @@ public class LinkedList {
         size++;
     }
 
+    public Node get(int index) {
+        Node node = head;
+        for(int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return  node;
+    }
+
+    public int deleteLast() {
+        if(size <= 1) {
+            return deleteLast();
+        }
+
+        Node secondLast = get(size-2);
+        int val = tail.val;
+
+        tail = secondLast;
+        tail.next = null;
+
+        return val;
+    }
+
+    public int delete(int index) {
+        if(index == 0) {
+            return deleteFirst();
+        }
+
+        if(index == size - 1) {
+            return deleteLast();
+        }
+
+        Node prev = get(index - 1);
+        int val = prev.next.val;
+
+        prev.next = prev.next.next;
+
+        return val;
+
+    }
+
     public int deleteFirst() {
         int val = head.val;
         head = head.next;
@@ -104,8 +144,18 @@ public class LinkedList {
         return val;
     }
 
-//    public int deleteLast() {}
-    int val = tail.val;
+    public Node find(int val) {
+        Node node = head;
+
+        while (node != null) {
+            if(node.val == val) {
+                return node;
+            }
+            node = node.next;
+         }
+
+        return  null;
+    }
 
 
     public void display() {
