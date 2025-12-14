@@ -2,22 +2,31 @@ package linkedlist;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        NewNode a = new NewNode('A');
+        NewNode b = new NewNode('B');
+        NewNode c = new NewNode('C');
+        NewNode d = new NewNode('D');
 
-        list.insertFirst(3);
-        list.insertFirst(4);
-        list.insertFirst(5);
-        list.insertFirst(7);
-        list.display();
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        printList(a);
+//        LinkedList list = new LinkedList();
 
-        list.insertV2(1900, 2);
-        list.display();
+//        list.insertFirst(3);
+//        list.insertFirst(4);
+//        list.insertFirst(5);
+//        list.insertFirst(7);
+//        list.display();
+//
+//        list.insertV2(1900, 2);
+//        list.display();
 //        list.deleteFirst();
 //        list.display();
 //        list.deleteLast();
 //        list.display();
-        list.insertRec(8,3);
-        list.display();
+//        list.insertRec(8,3);
+//        list.display();
 
 //        DLL list = new DLL();
 //        list.insertFirst(3);
@@ -40,5 +49,13 @@ public class Main {
 //        list.display();
     }
 
+    public static void printList(NewNode head) {
+        NewNode current = head;
+
+        while(current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+    }
 
 }
