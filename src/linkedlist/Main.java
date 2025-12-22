@@ -1,52 +1,22 @@
 package linkedlist;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        NewNode a = new NewNode('A');
-        NewNode b = new NewNode('B');
-        NewNode c = new NewNode('C');
-        NewNode d = new NewNode('D');
+        NewNode a = new NewNode(2);
+        NewNode b = new NewNode(4);
+        NewNode c = new NewNode(9);
+        NewNode d = new NewNode(5);
 
         a.next = b;
         b.next = c;
         c.next = d;
         printList(a);
-//        LinkedList list = new LinkedList();
-
-//        list.insertFirst(3);
-//        list.insertFirst(4);
-//        list.insertFirst(5);
-//        list.insertFirst(7);
-//        list.display();
-//
-//        list.insertV2(1900, 2);
-//        list.display();
-//        list.deleteFirst();
-//        list.display();
-//        list.deleteLast();
-//        list.display();
-//        list.insertRec(8,3);
-//        list.display();
-
-//        DLL list = new DLL();
-//        list.insertFirst(3);
-//        list.insertFirst(4);
-//        list.insertFirst(5);
-//        list.insertFirst(7);
-//        list.insertLast(79);
-//        list.insert(5,12);
-
-//        list.display();
-
-//        CLL list  = new CLL();
-//        list.insert(23);
-//        list.insert(3);
-//        list.insert(19);
-//        list.insert(75);
-//        list.display();
-//
-//        list.delete(3);
-//        list.display();
+        System.out.println();
+//        System.out.println(linkedListValues(a));
+        System.out.println(sumList(a));
     }
 
     public static void printList(NewNode head) {
@@ -56,6 +26,27 @@ public class Main {
             System.out.print(current.data + " -> ");
             current = current.next;
         }
+    }
+
+    public static List<Character> linkedListValues(NewNode head){
+        List<Character> list = new ArrayList<>();
+        NewNode current = head;
+        while(current != null){
+            list.add(current.data);
+            current = current.next;
+        }
+
+        return list;
+    }
+
+    public static int sumList(NewNode head) {
+        NewNode current = head;
+        int sum = 0;
+        while(current != null) {
+            sum += current.val2;
+            current = current.next;
+        }
+        return sum;
     }
 
 }
