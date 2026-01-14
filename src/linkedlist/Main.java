@@ -16,14 +16,18 @@ public class Main {
         printList(a);
         System.out.println();
 //        System.out.println(linkedListValues(a));
-        System.out.println(sumList(a));
+//        System.out.println(sumList(a));
+//        System.out.println(linkedListFind(a,5));
+//        System.out.println(getNodeValue(a,0));
+        NewNode rev = reverseList(a);
+        printList(rev);
     }
 
     public static void printList(NewNode head) {
         NewNode current = head;
 
         while(current != null) {
-            System.out.print(current.data + " -> ");
+            System.out.print(current.val2 + " -> ");
             current = current.next;
         }
     }
@@ -47,6 +51,45 @@ public class Main {
             current = current.next;
         }
         return sum;
+    }
+
+    public static boolean linkedListFind(NewNode head, int val) {
+        NewNode current = head;
+
+        while (current != null) {
+            if(current.val2 == val) return true;
+            current = current.next;
+        }
+
+        return false;
+    }
+
+    public static Integer getNodeValue(NewNode head, int index) {
+        if(head == null) return  null;
+        NewNode currentNode = head;
+        int counter = 0;
+
+        while(currentNode != null) {
+            if(counter == index) return currentNode.val2;
+            counter++;
+            currentNode = currentNode.next;
+        }
+
+        return null;
+    }
+
+
+    public static NewNode reverseList(NewNode head) {
+        NewNode prev = null;
+        NewNode current = head;
+        while (current != null) {
+            NewNode temp = current.next;
+            current.next = prev;
+            prev = current;
+            current = temp;
+        }
+
+        return  prev;
     }
 
 }
