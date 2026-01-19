@@ -10,17 +10,35 @@ public class Main {
         NewNode c = new NewNode(9);
         NewNode d = new NewNode(5);
 
+
+
         a.next = b;
         b.next = c;
         c.next = d;
+
+        NewNode e = new NewNode(11);
+        NewNode f = new NewNode(14);
+        NewNode g = new NewNode(19);
+        NewNode h = new NewNode(21);
+        NewNode i = new NewNode(18);
+        NewNode j = new NewNode(17);
+        NewNode k = new NewNode(50);
+
+        e.next = f;
+        f.next = g;
+        g.next = h;
+        h.next = i;
+        i.next = j;
+        j.next = k;
         printList(a);
         System.out.println();
 //        System.out.println(linkedListValues(a));
 //        System.out.println(sumList(a));
 //        System.out.println(linkedListFind(a,5));
 //        System.out.println(getNodeValue(a,0));
-        NewNode rev = reverseList(a);
-        printList(rev);
+//        NewNode rev = reverseList(a);
+        NewNode rev2 = zipList(a,e);
+        printList(rev2);
     }
 
     public static void printList(NewNode head) {
@@ -90,6 +108,32 @@ public class Main {
         }
 
         return  prev;
+    }
+
+    public static NewNode zipList(NewNode head1, NewNode head2) {
+
+        if(head1 == null) return head2;
+        if(head2 == null) return head1;
+
+        NewNode curr1 = head1;
+        NewNode curr2 = head2;
+
+
+        while(curr1 != null && curr2 != null) {
+            NewNode next1 = curr1.next;
+            NewNode next2 = curr2.next;
+
+            curr1.next = curr2;
+
+            if(next1 == null) break;
+
+            curr2.next = next1;
+
+            curr1 = next1;
+            curr2 = next2;
+        }
+
+        return head1;
     }
 
 }
