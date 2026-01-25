@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        NewNode a = new NewNode(2);
-        NewNode b = new NewNode(4);
-        NewNode c = new NewNode(9);
-        NewNode d = new NewNode(5);
+        NewNode a = new NewNode(1);
+        NewNode b = new NewNode(3);
+        NewNode c = new NewNode(5);
+        NewNode d = new NewNode(7);
 
 
 
@@ -16,13 +16,13 @@ public class Main {
         b.next = c;
         c.next = d;
 
-        NewNode e = new NewNode(11);
-        NewNode f = new NewNode(14);
-        NewNode g = new NewNode(19);
-        NewNode h = new NewNode(21);
-        NewNode i = new NewNode(18);
-        NewNode j = new NewNode(17);
-        NewNode k = new NewNode(50);
+        NewNode e = new NewNode(2);
+        NewNode f = new NewNode(4);
+        NewNode g = new NewNode(6);
+        NewNode h = new NewNode(8);
+        NewNode i = new NewNode(10);
+        NewNode j = new NewNode(12);
+        NewNode k = new NewNode(14);
 
         e.next = f;
         f.next = g;
@@ -117,7 +117,6 @@ public class Main {
 
         NewNode curr1 = head1;
         NewNode curr2 = head2;
-
 
         while(curr1 != null && curr2 != null) {
             NewNode next1 = curr1.next;
